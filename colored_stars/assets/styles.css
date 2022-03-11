@@ -1,0 +1,12 @@
+.page__canvas {
+  width: 600px;
+}
+
+#canvas-h50 {
+    border: 1px #ccc solid;
+    margin-bottom: 5px;
+}
+
+#canvas-h600 {
+    border: 1px #ccc solid;
+}

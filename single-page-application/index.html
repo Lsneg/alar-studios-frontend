@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Editing users</title>
+  </head>
+
+  <div class="container">
+    <div id="root"></div>
+  </div>
+
+  <script type="text/template" id="viewRoot">
+
+    <% _.each(data, function(data){ %>
+      <div id="id-<%=data.uid %>">
+        <input class="name" <%= data.disabled %> type="text" value="<%= data.name %>" />
+        <input class="phoneNumber" <%= data.disabled %> type="text" value="<%= data.phoneNumber %>" />
+        <input type="button" value="<%= data.disabled === 'disabled' ?  'Редактировать' : 'Сохранить' %>" class="disabledInputs" />
+        <input class="remove" type="button" value="Удалить" />
+      </div>
+    <% }) %>
+    <hr />
+    <div>
+      <input class="newName" value="<%= newName %>" type="text" />
+      <input class="newPhoneNumber" value="<%= newPhoneNumber %>" type="text" />
+      <input class="addInputs" type="button" value="Добавить" />
+    </div>
+
+  </script>
+
+  <link href=" ./assets/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone-min.min.js"></script>
+  <script src="./assets/api.js"></script>
+  <script src="./assets/index.js"></script>
+</html>
